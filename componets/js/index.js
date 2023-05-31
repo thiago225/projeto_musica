@@ -30,6 +30,18 @@ const songs = [
         displayName: 'Intellect',
         cover: 'imagens/3.jpg',
         artist: 'Yung Logos',
+    },
+    {
+        path: 'imagens/4.mp3',
+        displayName: 'impossible',
+        cover: 'imagens/4.jpg',
+        artist: 'James Arthur',
+    },
+    {
+        path: 'imagens/5.mp3',
+        displayName: 'Stay with me',
+        cover: 'imagens/5.jpg',
+        artist: 'chanyeol & punch',
     }
 ];
 
