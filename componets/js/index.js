@@ -42,6 +42,18 @@ const songs = [
         displayName: 'Stay with me',
         cover: 'imagens/5.jpg',
         artist: 'chanyeol & punch',
+    },
+    {
+        path: 'imagens/6.mp3',
+        displayName: 'awake and alive',
+        cover: 'imagens/6.jpg',
+        artist: 'skillet',
+    },
+    {
+        path: 'imagens/7.mp3',
+        displayName: 'All around me',
+        cover: 'imagens/7.jpg',
+        artist: 'flyleaf',
     }
 ];
 
