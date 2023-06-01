@@ -18,27 +18,27 @@
     "artist": "Yung Logos"
   },
   {
-    "path": "imagens/4.mp3",
+    "path": "musica/4.mp3",
     "displayName": "impossible",
-    "cover": "imagens/4.jpg",
+    "cover": "musica/4.jpg",
     "artist": "James Arthur"
   },
   {
-    "path": "imagens/5.mp3",
+    "path": "musica/5.mp3",
     "displayName": "Stay with me",
-    "cover": "imagens/5.jpg",
+    "cover": "musica/5.jpg",
     "artist": "chanyeol & punch"
   },
   {
-    "path": "imagens/6.mp3",
+    "path": "musica/6.mp3",
     "displayName": "awake and alive",
-    "cover": "imagens/6.jpg",
+    "cover": "musica/6.jpg",
     "artist": "skillet"
   },
   {
-    "path": "imagens/7.mp3",
+    "path": "musica/7.mp3",
     "displayName": "All around me",
-    "cover": "imagens/7.jpg",
+    "cover": "musica/7.jpg",
     "artist": "flyleaf"
   }
 ]
