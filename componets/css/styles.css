@@ -50,6 +50,35 @@ body{
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
 }
 
+.search-container{
+    display: grid;
+    grid-template-columns: 9fr 3fr;
+    gap: 1.2em;
+}
+
+.search-container input, .search-container button{
+    font-size: 0.9em;
+    outline: none;
+    border-radius: 0.3em;
+}
+
+.search-container input{
+    background-color: transparent;
+    border: 1px solid #a0a0a0;
+    color: #090707;
+    padding: 0.7em;
+}
+
+.search-container input:focus{
+    border-color: #fff;
+}
+
+.search-container button{
+    background-color: #ffb92a;
+    border: none;
+    cursor: pointer;
+}
+
 .player-img{
     width: 300px;
     height: 300px;

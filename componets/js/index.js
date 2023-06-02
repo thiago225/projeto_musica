@@ -1,23 +1,24 @@
-const image = document.getElementById('cover'),
-    title = document.getElementById('music-title'),
-    artist = document.getElementById('music-artist'),
-    currentTimeEl = document.getElementById('current-time'),
-    durationEl = document.getElementById('duration'),
-    progress = document.getElementById('progress'),
-    playerProgress = document.getElementById('player-progress'),
-    prevBtn = document.getElementById('prev'),
-    nextBtn = document.getElementById('next'),
-    playBtn = document.getElementById('play'),
-    background = document.getElementById('bg-img');
+const image = document.getElementById('cover');
+const title = document.getElementById('music-title');
+const artist = document.getElementById('music-artist');
+const currentTimeEl = document.getElementById('current-time');
+const durationEl = document.getElementById('duration');
+const progress = document.getElementById('progress');
+const playerProgress = document.getElementById('player-progress');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+const playBtn = document.getElementById('play');
+const background = document.getElementById('bg-img');
+const searchInput = document.getElementById('search-input');
 
 const music = new Audio();
 
-// ler os arquivo em json
+// Ler os dados do arquivo JSON e carregar a primeira música
 fetch('./assets/musica.json')
     .then(response => response.json())
     .then(data => {
-        songs = data; // Atribua os dados do arquivo JSON ao array songs
-        loadMusic(songs[musicIndex]); // Carregue a primeira música
+        songs = data; // Atribuir os dados do arquivo JSON ao array songs
+        loadMusic(songs[musicIndex]); // Carregar a primeira música
     })
     .catch(error => {
         console.error('Erro ao ler o arquivo JSON:', error);
@@ -82,11 +83,29 @@ function setProgressBar(e) {
     music.currentTime = (clickX / width) * music.duration;
 }
 
+function handleSearch() {
+    const searchTerm = searchInput.value.toLowerCase();
+
+    // Encontrar a música correspondente ao termo de busca
+    const foundSong = songs.find(song =>
+        song.displayName.toLowerCase().includes(searchTerm)
+    );
+
+    if (foundSong) {
+        // Carregar a música encontrada
+        loadMusic(foundSong);
+    } else {
+        // Exibir uma mensagem de erro ou fazer algo quando a música não for encontrada
+        console.log('Música não encontrada');
+    }
+}
+
 playBtn.addEventListener('click', togglePlay);
 prevBtn.addEventListener('click', () => changeMusic(-1));
 nextBtn.addEventListener('click', () => changeMusic(1));
 music.addEventListener('ended', () => changeMusic(1));
 music.addEventListener('timeupdate', updateProgressBar);
 playerProgress.addEventListener('click', setProgressBar);
+searchInput.addEventListener('input', handleSearch);
 
-loadMusic(songs[musicIndex]);
+
