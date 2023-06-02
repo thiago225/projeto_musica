@@ -170,3 +170,19 @@ h3{
     position: relative;
     top: 3px;
 }
+
+@media screen and (max-width: 600px) {
+    .container{
+        font-size: 14px;
+    }
+    .poster{
+        margin: auto;
+        width: auto;
+        max-height: 10.8em;
+    }
+
+    .info{
+        grid-template-columns: 1fr;
+    }
+
+}
