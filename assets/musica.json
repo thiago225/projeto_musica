@@ -1,44 +1,44 @@
 [
   {
-    "path": "musica/1.mp3",
+    "path": "musica/mp3/1.mp3",
     "displayName": "The Charmer's Call",
-    "cover": "musica/1.jpg",
+    "cover": "musica/img/1.jpg",
     "artist": "Hanu Dixit"
   },
   {
-    "path": "musica/2.mp3",
+    "path": "musica/mp3/2.mp3",
     "displayName": "You Will Never See Me Coming",
-    "cover": "musica/2.jpg",
+    "cover": "musica/img/2.jpg",
     "artist": "NEFFEX"
   },
   {
-    "path": "musica/3.mp3",
+    "path": "musica/mp3/3.mp3",
     "displayName": "Intellect",
-    "cover": "musica/3.jpg",
+    "cover": "musica/img/3.jpg",
     "artist": "Yung Logos"
   },
   {
-    "path": "musica/4.mp3",
+    "path": "musica/mp3/4.mp3",
     "displayName": "impossible",
-    "cover": "musica/4.jpg",
+    "cover": "musica/img/4.jpg",
     "artist": "James Arthur"
   },
   {
-    "path": "musica/5.mp3",
+    "path": "musica/mp3/5.mp3",
     "displayName": "Stay with me",
-    "cover": "musica/5.jpg",
+    "cover": "musica/img/5.jpg",
     "artist": "chanyeol & punch"
   },
   {
-    "path": "musica/6.mp3",
+    "path": "musica/mp3/6.mp3",
     "displayName": "awake and alive",
-    "cover": "musica/6.jpg",
+    "cover": "musica/img/6.jpg",
     "artist": "skillet"
   },
   {
-    "path": "musica/7.mp3",
+    "path": "musica/mp3/7.mp3",
     "displayName": "All around me",
-    "cover": "musica/7.jpg",
+    "cover": "musica/img/7.jpg",
     "artist": "flyleaf"
   }
 ]
