@@ -40,5 +40,53 @@
     "displayName": "All around me",
     "cover": "musica/img/7.jpg",
     "artist": "flyleaf"
+  },
+  {
+    "path": "musica/mp3/8.mp3",
+    "displayName": "The kill",
+    "cover": "musica/img/8.jpg",
+    "artist": "Thirty Seconds to Mars"
+  },
+  {
+    "path": "musica/mp3/9.mp3",
+    "displayName": "Bad omens",
+    "cover": "musica/img/9.jpg",
+    "artist": "Just pretend"
+  },
+  {
+    "path": "musica/mp3/10.mp3",
+    "displayName": "Heavy",
+    "cover": "musica/img/10.jpg",
+    "artist": "Linkin park feat kiiara"
+  },
+  {
+    "path": "musica/mp3/11.mp3",
+    "displayName": "Breaking benjamin",
+    "cover": "musica/img/11.jpg",
+    "artist": "he diary of Jane"
+  },
+  {
+    "path": "musica/mp3/12.mp3",
+    "displayName": "Renegade",
+    "cover": "musica/img/12.jpg",
+    "artist": "aaryah shah"
+  },
+  {
+    "path": "musica/mp3/13.mp3",
+    "displayName": "Gangsta",
+    "cover": "musica/img/13.jpg",
+    "artist": "kehlani"
+  },
+  {
+    "path": "musica/mp3/14.mp3",
+    "displayName": "Heathens",
+    "cover": "musica/img/14.jpg",
+    "artist": "twenty one pilots"
+  },
+  {
+    "path": "musica/mp3/15.mp3",
+    "displayName": "Pontos de exclamação",
+    "cover": "musica/img/15.jpg",
+    "artist": "jovem Dionísio"
   }
 ]

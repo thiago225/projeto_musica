@@ -97,6 +97,7 @@ function handleSearch() {
     } else {
         // Exibir uma mensagem de erro ou fazer algo quando a música não for encontrada
         console.log('Música não encontrada');
+        alert('Musica não encontra!')
     }
 }
 
