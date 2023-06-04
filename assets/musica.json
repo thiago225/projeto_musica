@@ -163,8 +163,32 @@
   },
   {
     "path": "musica/mp3/28.mp3",
-    "displayName": "Numb",
+    "displayName": "Faint",
     "cover": "musica/img/28.jpg",
+    "artist": "Linkin park"
+  },
+  {
+    "path": "musica/mp3/29.mp3",
+    "displayName": "Burn it down",
+    "cover": "musica/img/29.jpg",
+    "artist": "Linkin park"
+  },
+  {
+    "path": "musica/mp3/30.mp3",
+    "displayName": "Somewhere I belong",
+    "cover": "musica/img/30.jpg",
+    "artist": "Linkin park"
+  },
+  {
+    "path": "musica/mp3/31.mp3",
+    "displayName": "Castle of Glass",
+    "cover": "musica/img/31.jpg",
+    "artist": "Linkin park"
+  },
+  {
+    "path": "musica/mp3/32.mp3",
+    "displayName": "Faint",
+    "cover": "musica/img/32.jpg",
     "artist": "Linkin park"
   }
 ]

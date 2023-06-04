@@ -1,4 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&amp;display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+:root {
+    --cor-primaria: #000000;
+    --cor-segundaria: #f6f6f6f6;
+    --cor-terciaria: #22D4FD;
+    --cor-hover: #272727;
+
+    --font-primaria: 'Montserrat', sans-serif;
+    --font-segundaria: 'Krona One', sans-serif;
+}
+
 
 html{
     box-sizing: border-box;
