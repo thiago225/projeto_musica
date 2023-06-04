@@ -88,5 +88,83 @@
     "displayName": "Pontos de exclamação",
     "cover": "musica/img/15.jpg",
     "artist": "jovem Dionísio"
+  },
+  {
+    "path": "musica/mp3/16.mp3",
+    "displayName": "Train wreck",
+    "cover": "musica/img/16.jpg",
+    "artist": "James Arthur"
+  },
+  {
+    "path": "musica/mp3/17.mp3",
+    "displayName": "Say you won't let Go",
+    "cover": "musica/img/17.jpg",
+    "artist": "James Arthur"
+  },
+  {
+    "path": "musica/mp3/18.mp3",
+    "displayName": "Car's outside",
+    "cover": "musica/img/18.jpg",
+    "artist": "James Arthur"
+  },
+  {
+    "path": "musica/mp3/19.mp3",
+    "displayName": "Can I be him",
+    "cover": "musica/img/19.jpg",
+    "artist": "James Arthur"
+  },
+  {
+    "path": "musica/mp3/20.mp3",
+    "displayName": "Naked",
+    "cover": "musica/img/20.jpg",
+    "artist": "James Arthur"
+  },
+  {
+    "path": "musica/mp3/21.mp3",
+    "displayName": "In the and",
+    "cover": "musica/img/21.jpg",
+    "artist": "Linkin parkr"
+  },
+  {
+    "path": "musica/mp3/22.mp3",
+    "displayName": "Numb",
+    "cover": "musica/img/22.jpg",
+    "artist": "Linkin park"
+  },
+  {
+    "path": "musica/mp3/23.mp3",
+    "displayName": "What l've done",
+    "cover": "musica/img/23.jpg",
+    "artist": "Linkin park"
+  },
+  {
+    "path": "musica/mp3/24.mp3",
+    "displayName": "Lost",
+    "cover": "musica/img/24.jpg",
+    "artist": "Linkin park"
+  },
+  {
+    "path": "musica/mp3/25.mp3",
+    "displayName": "One more light",
+    "cover": "musica/img/25.jpg",
+    "artist": "Linkin park"
+  },
+  {
+    "path": "musica/mp3/26.mp3",
+    "displayName": "New divide",
+    "cover": "musica/img/26.jpg",
+    "artist": "Linkin park"
+  },
+  {
+    "path": "musica/mp3/27.mp3",
+    "displayName": "Leave out all the rest",
+    "cover": "musica/img/27.jpg",
+    "artist": "Linkin park"
+  },
+  {
+    "path": "musica/mp3/28.mp3",
+    "displayName": "Numb",
+    "cover": "musica/img/28.jpg",
+    "artist": "Linkin park"
   }
 ]
