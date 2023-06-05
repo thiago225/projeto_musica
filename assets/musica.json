@@ -187,8 +187,134 @@
   },
   {
     "path": "musica/mp3/32.mp3",
-    "displayName": "Faint",
+    "displayName": "Lovely",
     "cover": "musica/img/32.jpg",
-    "artist": "Linkin park"
+    "artist": "Billie Eilish feat khalid"
+  },
+  {
+    "path": "musica/mp3/33.mp3",
+    "displayName": "Night changes",
+    "cover": "musica/img/33.jpg",
+    "artist": "one directiond"
+  },
+  {
+    "path": "musica/mp3/34.mp3",
+    "displayName": "Someone you loved",
+    "cover": "musica/img/34.jpg",
+    "artist": "Lewis Capaldi"
+  },
+  {
+    "path": "musica/mp3/35.mp3",
+    "displayName": "Stressed out",
+    "cover": "musica/img/35.jpg",
+    "artist": "Twenty one pilots"
+  },
+  {
+    "path": "musica/mp3/36.mp3",
+    "displayName": "All of me",
+    "cover": "musica/img/36.jpg",
+    "artist": "John legend"
+  },
+  {
+    "path": "musica/mp3/37.mp3",
+    "displayName": "Let me downslowly slowly",
+    "cover": "musica/img/37.jpg",
+    "artist": "Alec Benjamin"
+  },
+  {
+    "path": "musica/mp3/38.mp3",
+    "displayName": "Paradise",
+    "cover": "musica/img/38.jpg",
+    "artist": "Coldplay"
+  },
+  {
+    "path": "musica/mp3/39.mp3",
+    "displayName": "Demons",
+    "cover": "musica/img/39.jpg",
+    "artist": "Imagine Dragons"
+  },
+  {
+    "path": "musica/mp3/40.mp3",
+    "displayName": "Too good at goodbyes",
+    "cover": "musica/img/40.jpg",
+    "artist": "Sam Smith"
+  },
+  {
+    "path": "musica/mp3/41.mp3",
+    "displayName": "De janeiro a janeiro",
+    "cover": "musica/img/41.jpg",
+    "artist": "Roberta campos & Nando reis"
+  },
+  {
+    "path": "musica/mp3/42.mp3",
+    "displayName": "Money",
+    "cover": "musica/img/42.jpg",
+    "artist": "Lisa"
+  },
+  {
+    "path": "musica/mp3/43.mp3",
+    "displayName": "Pais e filhos",
+    "cover": "musica/img/43.jpg",
+    "artist": "legião urbana"
+  },
+  {
+    "path": "musica/mp3/44.mp3",
+    "displayName": "Tempo perdido",
+    "cover": "musica/img/44.jpg",
+    "artist": "legião urbana"
+  },
+  {
+    "path": "musica/mp3/45.mp3",
+    "displayName": "7 years",
+    "cover": "musica/img/45.jpg",
+    "artist": "Lukas Graham"
+  },
+  {
+    "path": "musica/mp3/46.mp3",
+    "displayName": "Simples e romântico",
+    "cover": "musica/img/46.jpg",
+    "artist": "Nicolas Germano"
+  },
+  {
+    "path": "musica/mp3/47.mp3",
+    "displayName": "Romântico anônimo",
+    "cover": "musica/img/47.jpg",
+    "artist": "Marcos & belutti"
+  },
+  {
+    "path": "musica/mp3/48.mp3",
+    "displayName": "Aquarela",
+    "cover": "musica/img/48.jpg",
+    "artist": "Toquinho"
+  },
+  {
+    "path": "musica/mp3/49.mp3",
+    "displayName": "Summertime sadness",
+    "cover": "musica/img/49.jpg",
+    "artist": "Lana del Rey"
+  },
+  {
+    "path": "musica/mp3/50.mp3",
+    "displayName": "Summer In the city",
+    "cover": "musica/img/50.jpg",
+    "artist": "Now United"
+  },
+  {
+    "path": "musica/mp3/51.mp3",
+    "displayName": "Rise UP",
+    "cover": "musica/img/51.jpg",
+    "artist": "Andra day"
+  },
+  {
+    "path": "musica/mp3/52.mp3",
+    "displayName": "Diamonds",
+    "cover": "musica/img/52.jpg",
+    "artist": "Rihanna"
+  },
+  {
+    "path": "musica/mp3/53.mp3",
+    "displayName": "Domingo de manhã",
+    "cover": "musica/img/53.jpg",
+    "artist": "Marcos & Belutti"
   }
 ]
