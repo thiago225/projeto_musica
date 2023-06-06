@@ -22,6 +22,7 @@ fetch('./assets/musica.json')
     })
     .catch(error => {
         console.error('Erro ao ler o arquivo JSON:', error);
+        console.log("Erro ao ler o arquivo JSON")
     });
 
 let musicIndex = 0;
@@ -37,18 +38,18 @@ function togglePlay() {
 
 function playMusic() {
     isPlaying = true;
-    // Change play button icon
+    // Alterar o ícone do botão de reprodução
     playBtn.classList.replace('fa-play', 'fa-pause');
-    // Set button hover title
+    // Definir título de foco do botão
     playBtn.setAttribute('title', 'Pause');
     music.play();
 }
 
 function pauseMusic() {
     isPlaying = false;
-    // Change pause button icon
+    // Ícone do botão Alterar pausa
     playBtn.classList.replace('fa-pause', 'fa-play');
-    // Set button hover title
+    // Definir título de foco do botão Play
     playBtn.setAttribute('title', 'Play');
     music.pause();
 }

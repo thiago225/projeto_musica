@@ -12,7 +12,6 @@
     --font-segundaria: 'Krona One', sans-serif;
 }
 
-
 html{
     box-sizing: border-box;
 }
@@ -50,9 +49,16 @@ body{
     transform: scale(1.1);
 }
 
-.input {
-
+.column {
+    display: flex;
+    flex-direction: column;
 }
+
+.input {
+    position: relative;
+    top: -20%;
+}
+
 .container{
     background-color: #e7e7e7;
     height: 500px;
@@ -166,6 +172,7 @@ h3{
     top: -15px;
     left: 120px;
     width: 200px;
+    user-select: none;
 }
 
 .fa-solid{
