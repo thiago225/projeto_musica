@@ -90,8 +90,7 @@ function setProgressBar(e) {
     music.currentTime = (clickX / width) * music.duration;
 }
 
-// Restante do código...
-
+// Função pra prucura as musica
 function handleSearch() {
     const searchTerm = searchInput.value.toLowerCase();
 
