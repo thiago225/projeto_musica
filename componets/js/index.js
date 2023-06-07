@@ -13,19 +13,23 @@ const searchInput = document.getElementById('search-input');
 
 const music = new Audio();
 
+// Função para gerar um índice aleatório
+function getRandomIndex(maxIndex) {
+    return Math.floor(Math.random() * maxIndex);
+}
+
 // Ler os dados do arquivo JSON e carregar a primeira música
 fetch('./assets/musica.json')
     .then(response => response.json())
     .then(data => {
-        songs = data; // Atribuir os dados do arquivo JSON ao array songs
-        const randomIndex = Math.floor(Math.random() * songs.length); // Gerar um índice aleatório
-        loadMusic(songs[randomIndex]); // Carregar a música aleatória
-    })
+    songs = data; // Atribuir os dados do arquivo JSON ao array songs
+    const randomIndex = getRandomIndex(songs.length); // Gerar um índice aleatório
+    loadMusic(songs[randomIndex]); // Carregar a música aleatória
+})
     .catch(error => {
-        console.error('Erro ao ler o arquivo JSON:', error);
-        console.log("Erro ao ler o arquivo JSON");
-    });
-
+    console.error('Erro ao ler o arquivo JSON:', error);
+    console.log("Erro ao ler o arquivo JSON");
+});
 
 let musicIndex = 0;
 let isPlaying = false;
@@ -33,9 +37,9 @@ let isPlaying = false;
 function togglePlay() {
     if (isPlaying) {
         pauseMusic();
-    } else {
-        playMusic();
-    }
+} else {
+    playMusic();
+}
 }
 
 function playMusic() {
@@ -86,30 +90,35 @@ function setProgressBar(e) {
     music.currentTime = (clickX / width) * music.duration;
 }
 
+// Restante do código...
+
 function handleSearch() {
     const searchTerm = searchInput.value.toLowerCase();
 
-    // Encontrar a música correspondente ao termo de busca
-    const foundSong = songs.find(song =>
-        song.displayName.toLowerCase().includes(searchTerm)
+    // Encontrar as músicas correspondentes ao termo de busca
+    const foundSongs = songs.filter(song =>
+        song.displayName.toLowerCase().includes(searchTerm) ||
+        song.artist.toLowerCase().includes(searchTerm)
     );
 
-    if (foundSong) {
-        // Carregar a música encontrada
-        loadMusic(foundSong);
+    if (foundSongs.length > 0) {
+        // Carregar a primeira música encontrada
+        loadMusic(foundSongs[0]);
     } else {
-        // Exibir uma mensagem de erro ou fazer algo quando a música não for encontrada
-        console.log('Música não encontrada');
-        alert('Musica não encontrada!')
+        // Exibir uma mensagem de erro ou fazer algo quando nenhuma música for encontrada
+        console.log('Nenhuma música encontrada');
+        alert('Nenhuma música encontrada!');
     }
 }
+
 
 playBtn.addEventListener('click', togglePlay);
 prevBtn.addEventListener('click', () => changeMusic(-1));
 nextBtn.addEventListener('click', () => changeMusic(1));
-music.addEventListener('ended', () => changeMusic(1));
+music.addEventListener('ended', () => {
+    const randomIndex = getRandomIndex(songs.length); // Gerar um índice aleatório
+    changeMusic(randomIndex);
+});
 music.addEventListener('timeupdate', updateProgressBar);
 playerProgress.addEventListener('click', setProgressBar);
 searchInput.addEventListener('input', handleSearch);
-
-
