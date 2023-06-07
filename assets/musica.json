@@ -316,5 +316,11 @@
     "displayName": "Domingo de manhã",
     "cover": "musica/img/53.jpg",
     "artist": "Marcos & Belutti"
+  },
+  {
+    "path": "musica/mp3/54.mp3",
+    "displayName": "Those eyes",
+    "cover": "musica/img/54.jpg",
+    "artist": "new west"
   }
 ]

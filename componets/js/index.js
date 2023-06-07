@@ -18,12 +18,14 @@ fetch('./assets/musica.json')
     .then(response => response.json())
     .then(data => {
         songs = data; // Atribuir os dados do arquivo JSON ao array songs
-        loadMusic(songs[musicIndex]); // Carregar a primeira música
+        const randomIndex = Math.floor(Math.random() * songs.length); // Gerar um índice aleatório
+        loadMusic(songs[randomIndex]); // Carregar a música aleatória
     })
     .catch(error => {
         console.error('Erro ao ler o arquivo JSON:', error);
-        console.log("Erro ao ler o arquivo JSON")
+        console.log("Erro ao ler o arquivo JSON");
     });
+
 
 let musicIndex = 0;
 let isPlaying = false;
@@ -98,7 +100,7 @@ function handleSearch() {
     } else {
         // Exibir uma mensagem de erro ou fazer algo quando a música não for encontrada
         console.log('Música não encontrada');
-        alert('Musica não encontra!')
+        alert('Musica não encontrada!')
     }
 }
 
