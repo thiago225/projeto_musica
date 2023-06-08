@@ -334,7 +334,8 @@
     "displayName": "Easy on me",
     "cover": "musica/img/56.jpg",
     "artist": "Adele"
-  }{
+  },
+  {
     "path": "musica/mp3/57.mp3",
     "displayName": "Mercy",
     "cover": "musica/img/57.jpg",
