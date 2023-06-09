@@ -18,21 +18,18 @@ foreach ($dados as $item){
     $cover = mysqli_real_escape_string($conn, $item['cover']);
     $artist = mysqli_real_escape_string($conn, $item['artist']);
 
-}
+    $sql01 = mysqli_query($conn,"SELECT * FROM musica_img WHERE displayNamen = '$displayName'");
 
-$sql01 = mysqli_query($conn,"SELECT * FROM musica_img WHERE displayNamen = '$displayName'");
+    if($sql01->num_rows){
+        echo "já cadastrado";
+    }else{
+        $sql = "INSERT INTO musica_img(path, displayNamen, cover, artist) VALUES('$path', '$displayName', '$cover', '$artist')";
 
-if($sql01->num_rows){
-    echo "já cadastrado";
-}else{
-    $sql = "INSERT INTO musica_img(path, displayNamen, cover, artist) VALUES('$path', '$displayName', '$cover', '$artist')";
-
-    if ($conn->query($sql) === TRUE) {
-        echo "Dados inseridos com sucesso";
-    } else {
-        echo "Erro ao inserir dados: " . $conn->error;
+        if ($conn->query($sql) === TRUE) {
+            echo "Dados inseridos com sucesso";
+        } else {
+            echo "Erro ao inserir dados: " . $conn->error;
+        }
     }
 }
-
-
 ?>
