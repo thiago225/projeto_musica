@@ -1,4 +1,4 @@
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/projeto-musica';
 
 function MyApp({ Component, pageProps }) {
     return (
