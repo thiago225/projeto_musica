@@ -8,8 +8,19 @@ $data = file_get_contents('../assets/musica.json');
 
 // Converter os dados JSON para um array associativo em PHP
 $dados = json_decode($data, true);
-
 //var_dump($dados);
+
+//mapiando o json
+
+//$path = $dados[0]['path'];
+//var_dump($path) . PHP_EOL;
+//$displayName = $dados[0]['displayName'];
+//var_dump($displayName) . PHP_EOL;
+//$cover = $dados[0]['cover'];
+//var_dump($cover) . PHP_EOL;
+//$artist = $dados[0]['artist'];
+//var_dump($artist) . PHP_EOL;
+
 foreach ($dados as $item){
 
     // Inserir os dados no banco de dados
@@ -18,9 +29,10 @@ foreach ($dados as $item){
     $cover = mysqli_real_escape_string($conn, $item['cover']);
     $artist = mysqli_real_escape_string($conn, $item['artist']);
 
-    $sql01 = mysqli_query($conn,"SELECT * FROM musica_img WHERE displayNamen = '$displayName'");
+    $sql01 = "SELECT * FROM musica_img WHERE displayNamen = '$displayName'";
+    $sql02 = $conn->query($sql01);
 
-    if($sql01->num_rows){
+    if($sql02->num_rows > 0){
         echo "já cadastrado";
     }else{
         $sql = "INSERT INTO musica_img(path, displayNamen, cover, artist) VALUES('$path', '$displayName', '$cover', '$artist')";
@@ -32,4 +44,5 @@ foreach ($dados as $item){
         }
     }
 }
+
 ?>

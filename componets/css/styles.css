@@ -57,8 +57,9 @@ body{
 
 .input {
     position: relative;
-    top: -20%;
+    top: -350px;
     height: auto;
+    flex-direction: column;
 }
 
 .container{

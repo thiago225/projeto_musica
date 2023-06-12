@@ -778,5 +778,17 @@
     "displayName": "Porque eu teamo",
     "cover": "musica/img/131.jpg",
     "artist": "Anavitória"
+  },
+  {
+    "path": "musica/mp3/132.mp3",
+    "displayName": "Conexão incomun",
+    "cover": "musica/img/132.jpg",
+    "artist": "Mc Gabzin/DjTak"
+  },
+  {
+    "path": "musica/mp3/133.mp3",
+    "displayName": "Simplesmente ela",
+    "cover": "musica/img/133.jpg",
+    "artist": "MC Gabzin"
   }
 ]
