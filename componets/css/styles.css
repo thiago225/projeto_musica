@@ -60,6 +60,8 @@ body{
     top: -350px;
     height: auto;
     flex-direction: column;
+    color: white;
+    /*background-color: white;    */
 }
 
 .container{
@@ -89,7 +91,7 @@ body{
 
 .search-container input{
     background-color: transparent;
-    border: 1px solid #a0a0a0;
+    border: 1px solid #fff;
     color: #090707;
     padding: 0.7em;
 }
