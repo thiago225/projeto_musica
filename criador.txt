@@ -2,5 +2,5 @@ nome: Thiago Silva Sá
 matricula: 202208763601
 
 
-ajutandes: colega de trabalho ->
+ajutandes: amigos de trabalho ->
 kelvin e victor.
