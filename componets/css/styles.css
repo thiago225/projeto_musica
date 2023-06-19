@@ -55,6 +55,15 @@ body{
     position: absolute;
 }
 
+.input02{
+    position: relative;
+    top: 20px;
+    height: auto;
+    flex-direction: column;
+    color: white;
+
+}
+
 .input {
     position: relative;
     top: -350px;
@@ -105,6 +114,13 @@ body{
     border: none;
     cursor: pointer;
     color: #f0f0f0;
+}
+
+.button {
+    background-color: transparent;
+    cursor: pointer;
+    color: black;
+    border: 1px solid #5f0000;
 }
 
 
