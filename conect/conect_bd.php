@@ -3,6 +3,10 @@
 global $conn;
 include_once "conexao.php";
 
+function logMsg($messagem){
+    echo $messagem;
+}
+
 // Dados em formato JSON
 $data = file_get_contents('../assets/musica.json');
 
@@ -31,18 +35,14 @@ foreach ($dados as $item){
 
     $sql01 = "SELECT * FROM musica_img WHERE displayNamen = '$displayName'";
     $sql02 = $conn->query($sql01);
+    $Name = $sql02->fetch_assoc();
 
-    if($sql02->num_rows > 0){
-        echo "já cadastrado";
-    }else{
+    if(!$Name){
         $sql = "INSERT INTO musica_img(path, displayNamen, cover, artist) VALUES('$path', '$displayName', '$cover', '$artist')";
-
-        if ($conn->query($sql) === TRUE) {
-            echo "Dados inseridos com sucesso";
-        } else {
-            echo "Erro ao inserir dados: " . $conn->error;
-        }
+        $insert = $conn->query($sql);
+        logMsg("já inserito");
+    }else{
+        logMsg("já existe");
     }
 }
-
 ?>

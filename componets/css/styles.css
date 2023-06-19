@@ -91,7 +91,7 @@ body{
 
 .search-container input{
     background-color: transparent;
-    border: 1px solid #fff;
+    border: 1px solid #f0f0f0;
     color: #090707;
     padding: 0.7em;
 }
@@ -100,11 +100,13 @@ body{
     border-color: #fff;
 }
 
-.search-container button{
-    background-color: #ffb92a;
+.search-container button {
+    background-color: #5f0000;
     border: none;
     cursor: pointer;
+    color: #f0f0f0;
 }
+
 
 .player-img{
     width: 300px;

@@ -12,6 +12,7 @@ const background = document.getElementById('bg-img');
 const searchInput = document.getElementById('search-input');
 
 const music = new Audio();
+let songs = [];
 
 // Função para gerar um índice aleatório
 function getRandomIndex(maxIndex) {
@@ -22,24 +23,25 @@ function getRandomIndex(maxIndex) {
 fetch('./assets/musica.json')
     .then(response => response.json())
     .then(data => {
-    songs = data; // Atribuir os dados do arquivo JSON ao array songs
-    const randomIndex = getRandomIndex(songs.length); // Gerar um índice aleatório
-    loadMusic(songs[randomIndex]); // Carregar a música aleatória
-})
+        songs = data; // Atribuir os dados do arquivo JSON ao array songs
+        const randomIndex = getRandomIndex(songs.length); // Gerar um índice aleatório
+        loadMusic(songs[randomIndex]); // Carregar a música aleatória
+    })
     .catch(error => {
-    console.error('Erro ao ler o arquivo JSON:', error);
-    console.log("Erro ao ler o arquivo JSON");
-});
+        console.error('Erro ao ler o arquivo JSON:', error);
+        console.log("Erro ao ler o arquivo JSON");
+    });
 
 let musicIndex = 0;
 let isPlaying = false;
+let isRandom = false;
 
 function togglePlay() {
     if (isPlaying) {
         pauseMusic();
-} else {
-    playMusic();
-}
+    } else {
+        playMusic();
+    }
 }
 
 function playMusic() {
@@ -90,7 +92,7 @@ function setProgressBar(e) {
     music.currentTime = (clickX / width) * music.duration;
 }
 
-// Função pra prucura as musica
+// Função para buscar as músicas
 function handleSearch() {
     const searchTerm = searchInput.value.toLowerCase();
 
@@ -110,14 +112,36 @@ function handleSearch() {
     }
 }
 
+// Função para ativar ou desativar a reprodução de música aleatória
+function toggleRandom() {
+    isRandom = !isRandom; // Inverte o valor de isRandom
+    const randomToggleBtn = document.getElementById('random-toggle');
+
+    if (isRandom) {
+        randomToggleBtn.textContent = 'Música Aleatória: Ativada';
+    } else {
+        randomToggleBtn.textContent = 'Música Aleatória: Desativada';
+    }
+}
+
+// Função para carregar uma música aleatória
+function loadRandomMusic() {
+    const randomIndex = getRandomIndex(songs.length); // Gerar um índice aleatório
+    loadMusic(songs[randomIndex]); // Carregar a música aleatória
+    playMusic();
+}
 
 playBtn.addEventListener('click', togglePlay);
 prevBtn.addEventListener('click', () => changeMusic(-1));
 nextBtn.addEventListener('click', () => changeMusic(1));
 music.addEventListener('ended', () => {
-    const randomIndex = getRandomIndex(songs.length); // Gerar um índice aleatório
-    changeMusic(randomIndex);
+    if (isRandom) {
+        loadRandomMusic(); // Carregar uma música aleatória se a reprodução aleatória estiver ativada
+    } else {
+        changeMusic(1); // Carregar a próxima música se a reprodução aleatória estiver desativada
+    }
 });
 music.addEventListener('timeupdate', updateProgressBar);
 playerProgress.addEventListener('click', setProgressBar);
 searchInput.addEventListener('input', handleSearch);
+document.getElementById('random-toggle').addEventListener('click', toggleRandom);
