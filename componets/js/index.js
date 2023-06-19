@@ -118,9 +118,9 @@ function toggleRandom() {
     const randomToggleBtn = document.getElementById('random-toggle');
 
     if (isRandom) {
-        randomToggleBtn.textContent = 'Música Aleatória: Ativada';
+        randomToggleBtn.textContent = 'Random Music: Enabled';
     } else {
-        randomToggleBtn.textContent = 'Música Aleatória: Desativada';
+        randomToggleBtn.textContent = 'Random Music: Off';
     }
 }
 
