@@ -185,6 +185,7 @@ h3{
     height: 100%;
     width: 0%;
     transition: width 0.1s linear;
+    /*display: none;*/
 }
 
 .music-duration{
