@@ -19,6 +19,24 @@ function getRandomIndex(maxIndex) {
     return Math.floor(Math.random() * maxIndex);
 }
 
+// Função para controlar se o espaço está pressionado
+let isSpacePressed = false;
+
+function togglePlayOnSpace(event) {
+    if (event.code === 'Space') {
+        isSpacePressed = !isSpacePressed; // Inverte o valor de isSpacePressed
+
+        if (isSpacePressed) {
+            pauseMusic();
+        } else {
+            playMusic();
+        }
+    }
+}
+
+// Adicionar o event listener para o evento de teclado
+document.addEventListener('keydown', togglePlayOnSpace);
+
 // Ler os dados do arquivo JSON e carregar a primeira música
 fetch('./assets/musica.json')
     .then(response => response.json())
@@ -130,6 +148,34 @@ function loadRandomMusic() {
     loadMusic(songs[randomIndex]); // Carregar a música aleatória
     playMusic();
 }
+function jumpToPreviousMusic() {
+    changeMusic(-1);
+}
+
+function jumpToNextMusic() {
+    changeMusic(1);
+}
+
+function jumpForward() {
+    music.currentTime += 5; // Avançar 5 segundos
+}
+
+function jumpBackward() {
+    music.currentTime -= 5; // Retroceder 5 segundos
+}
+
+// Event listener para as teclas de seta para cima e para baixo
+document.addEventListener('keydown', event => {
+    if (event.code === 'ArrowUp') {
+        jumpToPreviousMusic();
+    } else if (event.code === 'ArrowDown') {
+        jumpToNextMusic();
+    } else if (event.code === 'ArrowRight') {
+        jumpForward();
+    } else if (event.code === 'ArrowLeft') {
+        jumpBackward();
+    }
+});
 
 playBtn.addEventListener('click', togglePlay);
 prevBtn.addEventListener('click', () => changeMusic(-1));
