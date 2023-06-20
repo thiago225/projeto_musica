@@ -790,5 +790,89 @@
     "displayName": "Simplesmente ela",
     "cover": "musica/img/133.jpg",
     "artist": "MC Gabzin"
+  },
+  {
+    "path": "musica/mp3/134.mp3",
+    "displayName": "Incrível jogando a potranca",
+    "cover": "musica/img/134.jpg",
+    "artist": "Mc Gabzin/Dj Swat"
+  },
+  {
+    "path": "musica/mp3/135.mp3",
+    "displayName": "Kikando e me olhando",
+    "cover": "musica/img/135.jpg",
+    "artist": " Mc Braz/Mc Tairon/Dj Win"
+  },
+  {
+    "path": "musica/mp3/136 .mp3",
+    "displayName": "Ai preto",
+    "cover": "musica/img/136.jpg",
+    "artist": "L7nnon/Dj Biel/Bianca"
+  },
+  {
+    "path": "musica/mp3/137.mp3",
+    "displayName": "Baile do morro",
+    "cover": "musica/img/133.jpg",
+    "artist": "Mc Tairon/Mc Vitin Da igrejinha/Dj Win"
+  },
+  {
+    "path": "musica/mp3/138.mp3",
+    "displayName": "Ô Moça",
+    "cover": "musica/img/138.jpg",
+    "artist": "Mc Zaquin"
+  },
+  {
+    "path": "musica/mp3/139.mp3",
+    "displayName": "MDS",
+    "cover": "musica/img/139.jpg",
+    "artist": "Kawe/Mc Lele Jp"
+  },
+  {
+    "path": "musica/mp3/140.mp3",
+    "displayName": "Dublê de Marido",
+    "cover": "musica/img/140.jpg",
+    "artist": "Xamã/Pedro lotto"
+  },
+  {
+    "path": "musica/mp3/141.mp3",
+    "displayName": "Ei amor",
+    "cover": "musica/img/141.jpg",
+    "artist": "Mvk/Mainstreet"
+  },
+  {
+    "path": "musica/mp3/142.mp3",
+    "displayName": "Evoque Prata",
+    "cover": "musica/img/142.jpg",
+    "artist": "Mc Menor hr/Mc Menor sg/Dj Escobar"
+  },
+  {
+    "path": "musica/mp3/143.mp3",
+    "displayName": "Bota tudo nessa porra",
+    "cover": "musica/img/143.jpg",
+    "artist": "Mc Pipokinha"
+  },
+  {
+    "path": "musica/mp3/144.mp3",
+    "displayName": "Maturidade",
+    "cover": "musica/img/144.jpg",
+    "artist": "Kayblack/Wall hein"
+  },
+  {
+    "path": "musica/mp3/145.mp3",
+    "displayName": "Coração gelado",
+    "cover": "musica/img/145.jpg",
+    "artist": "Wiu"
+  },
+  {
+    "path": "musica/mp3/146.mp3",
+    "displayName": "Sucrilhos",
+    "cover": "musica/img/146.jpg",
+    "artist": "Wiu"
+  },
+  {
+    "path": "musica/mp3/147.mp3",
+    "displayName": "Amiga talarica",
+    "cover": "musica/img/147.jpg",
+    "artist": "Wellison/Wiu"
   }
 ]
