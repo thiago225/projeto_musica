@@ -222,6 +222,44 @@ h3{
     top: 3px;
 }
 
+.player-download{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    top: -50px;
+    left: 50px;
+}
+
+.player-download {
+    object-fit: cover;
+    border-radius: 20px;
+    height: 0;
+    width: 0;
+
+}
+
+
+.player-download.active{
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+    opacity: 1;
+}
+
+.fa-download{
+    font-size: 30px;
+    color: #666;
+    margin-right: 30px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.3s ease;
+}
+
+.fa-download:hover{
+    filter: brightness(40%);
+}
+
+
 @media screen and (max-width: 600px) {
     .container{
         font-size: 14px;

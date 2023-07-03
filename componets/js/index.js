@@ -191,3 +191,18 @@ music.addEventListener('timeupdate', updateProgressBar);
 playerProgress.addEventListener('click', setProgressBar);
 searchInput.addEventListener('input', handleSearch);
 document.getElementById('random-toggle').addEventListener('click', toggleRandom);
+
+// Função para iniciar o download da música atual
+function downloadCurrentMusic() {
+    const downloadLink = document.createElement('a');
+    downloadLink.href = music.src;
+    downloadLink.download = title.textContent; // Utiliza o título da música atual
+    downloadLink.click();
+}
+
+// Event listener para o botão de download
+const downloadButton = document.getElementById('download');
+downloadButton.addEventListener('click', downloadCurrentMusic);
+
+
+
