@@ -195,9 +195,9 @@ document.getElementById('random-toggle').addEventListener('click', toggleRandom)
 // Função para iniciar o download da música atual
 function downloadCurrentMusic() {
     const downloadLink = document.createElement('a');
-    downloadLink.href = music.src;
     downloadLink.download = title.textContent; // Utiliza o título da música atual
     downloadLink.click();
+    downloadLink.href = music.src;
 }
 
 // Event listener para o botão de download
