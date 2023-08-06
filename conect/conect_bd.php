@@ -21,7 +21,7 @@ foreach ($dados as $item){
     $artist = tratamento($db, $item['artist']);
 
 
-    $sql01 = "SELECT * FROM musica_path WHERE displayNamen = '$displayName'";
+    $sql01 = "SELECT path FROM musica_path WHERE path = '$path'";
     $sql02 = $db->query($sql01);
 
     if($sql02->num_rows == 0){

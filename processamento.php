@@ -9,6 +9,7 @@ error_reporting( E_ALL & ~E_NOTICE );
 include_once 'conect/configs.php';
 include_once 'conect/util.php';
 include_once 'conect/funcoes.php';
+include_once 'conect/conect_bd.php';
 
 // $db1 = getMainDB();
 
