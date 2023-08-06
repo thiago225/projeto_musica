@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@vercel/analytics": "^1.0.1",
-    "@vercel/postgres": "^0.3.0"
-  }
-}
