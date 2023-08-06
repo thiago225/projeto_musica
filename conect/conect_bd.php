@@ -1,48 +1,35 @@
 <?php
 
 global $conn;
-include_once "conexao.php";
-
-function logMsg($messagem){
-    echo $messagem;
-}
+include_once "util.php";
+include_once "funcoes.php";
 
 // Dados em formato JSON
 $data = file_get_contents('../assets/musica.json');
 
 // Converter os dados JSON para um array associativo em PHP
 $dados = json_decode($data, true);
-//var_dump($dados);
 
-//mapiando o json
-
-//$path = $dados[0]['path'];
-//var_dump($path) . PHP_EOL;
-//$displayName = $dados[0]['displayName'];
-//var_dump($displayName) . PHP_EOL;
-//$cover = $dados[0]['cover'];
-//var_dump($cover) . PHP_EOL;
-//$artist = $dados[0]['artist'];
-//var_dump($artist) . PHP_EOL;
+$db = getMainDB();
 
 foreach ($dados as $item){
 
     // Inserir os dados no banco de dados
-    $path = mysqli_real_escape_string($conn, $item['path']);
-    $displayName = mysqli_real_escape_string($conn, $item['displayName']);
-    $cover = mysqli_real_escape_string($conn, $item['cover']);
-    $artist = mysqli_real_escape_string($conn, $item['artist']);
+    $path = tratamento($db, $item['path']);
+    $displayName = tratamento($db, $item['displayName']);
+    $cover = tratamento($db, $item['cover']);
+    $artist = tratamento($db, $item['artist']);
 
-    $sql01 = "SELECT * FROM musica_img WHERE displayNamen = '$displayName'";
-    $sql02 = $conn->query($sql01);
-    $Name = $sql02->fetch_assoc();
 
-    if(!$Name){
-        $sql = "INSERT INTO musica_img(path, displayNamen, cover, artist) VALUES('$path', '$displayName', '$cover', '$artist')";
-        $insert = $conn->query($sql);
-        logMsg("já inserito");
+    $sql01 = "SELECT * FROM musica_path WHERE displayNamen = '$displayName'";
+    $sql02 = $db->query($sql01);
+
+    if($sql02->num_rows == 0){
+        $sql = "INSERT INTO musica_path(path, displayNamen, cover, artist) VALUES('$path', '$displayName', '$cover', '$artist')";
+        $insert = $db->query($sql);
+        logMsg ("Inserindo musica... -> $displayName");
     }else{
-        logMsg("já existe");
+        logMsg ("Msuica já inserinda!! -> $displayName");
     }
 }
 ?>
