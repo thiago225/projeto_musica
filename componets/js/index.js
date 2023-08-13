@@ -122,11 +122,15 @@ function shareCurrentMusic() {
     const shareText = `Estou ouvindo: ${shareTitle} - ${shareArtist}`;
     const shareUrl = window.location.href;
 
+    // Adicione o nome da música como parâmetro na URL usando o método GET
+    const musicNameParam = encodeURIComponent(shareTitle);
+    const urlWithParams = `${shareUrl}?music=${musicNameParam}`;
+
     if (navigator.share) {
         navigator.share({
             title: 'Compartilhar Música',
             text: shareText,
-            url: shareUrl,
+            url: urlWithParams, // Use a URL com os parâmetros
         })
             .then(() => console.log('Música compartilhada com sucesso'))
             .catch((error) => console.error('Erro ao compartilhar música:', error));
@@ -134,6 +138,7 @@ function shareCurrentMusic() {
         console.warn('API de compartilhamento não suportada pelo navegador.');
     }
 }
+
 
 // Event listener para o botão de compartilhamento
 shareBtn.addEventListener('click', shareCurrentMusic);
