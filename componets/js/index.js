@@ -201,11 +201,11 @@ function toggleRandom() {
 }
 
 // Função para carregar uma música aleatória
-// function loadRandomMusic() {
-//     const randomIndex = getRandomIndex(songs.length); // Gerar um índice aleatório
-//     loadMusic(songs[randomIndex]); // Carregar a música aleatória
-//     playMusic();
-// }
+function loadRandomMusic() {
+    const randomIndex = getRandomIndex(songs.length); // Gerar um índice aleatório
+    loadMusic(songs[randomIndex]); // Carregar a música aleatória
+    playMusic();
+}
 
 function jumpToPreviousMusic() {
     changeMusic(-1);
