@@ -1,23 +1,5 @@
 [
   {
-    "path": "musica/mp3/1.mp3",
-    "displayName": "The Charmer's Call",
-    "cover": "musica/img/1.jpg",
-    "artist": "Hanu Dixit"
-  },
-  {
-    "path": "musica/mp3/2.mp3",
-    "displayName": "You Will Never See Me Coming",
-    "cover": "musica/img/2.jpg",
-    "artist": "NEFFEX"
-  },
-  {
-    "path": "musica/mp3/3.mp3",
-    "displayName": "Intellect",
-    "cover": "musica/img/3.jpg",
-    "artist": "Yung Logos"
-  },
-  {
     "path": "musica/mp3/4.mp3",
     "displayName": "impossible",
     "cover": "musica/img/4.jpg",
