@@ -260,6 +260,21 @@ h3{
 }
 
 
+.rodape {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.rodape p {
+    margin: 0;
+}
+
+
 @media screen and (max-width: 600px) {
     .container{
         font-size: 14px;

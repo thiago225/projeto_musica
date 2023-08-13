@@ -18,7 +18,7 @@ foreach ($dados as $item){
     $path = tratamento($db, $item['path']);
     $displayName = tratamento($db, $item['displayName']);
     $cover = tratamento($db, $item['cover']);
-    $artist = tratamento($db, $item['artist']);
+    $artist = tratamento($db, $item['artist']);+
 
 
     $sql01 = "SELECT path FROM musica_path WHERE path = '$path'";
