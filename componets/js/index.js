@@ -10,6 +10,8 @@ const nextBtn = document.getElementById('next');
 const playBtn = document.getElementById('play');
 const background = document.getElementById('bg-img');
 const searchInput = document.getElementById('search-input');
+const footerText = document.getElementById('footer-text');
+const shareBtn = document.getElementById('share');
 
 const music = new Audio();
 let songs = [];
@@ -80,13 +82,64 @@ function pauseMusic() {
     music.pause();
 }
 
+// Carregar a imagem de fundo e, em seguida, carregar a primeira música
+const bgImage = new Image();
+bgImage.src = './musica/img/';
+bgImage.onload = () => {
+    background.src = bgImage.src;
+
+    // Ler os dados do arquivo JSON e carregar a primeira música
+    fetch('./assets/musica.json')
+        .then(response => response.json())
+        .then(data => {
+            songs = data; // Atribuir os dados do arquivo JSON ao array songs
+            const randomIndex = getRandomIndex(songs.length); // Gerar um índice aleatório
+            loadMusic(songs[randomIndex]); // Carregar a música aleatória
+        })
+        .catch(error => {
+            console.error('Erro ao ler o arquivo JSON:', error);
+            console.log("Erro ao ler o arquivo JSON");
+        });
+};
+
+// Função para carregar uma música e atualizar a cor do footer
 function loadMusic(song) {
     music.src = song.path;
     title.textContent = song.displayName;
     artist.textContent = song.artist;
     image.src = song.cover;
     background.src = song.cover;
+
+    // Atualizar a cor do footer com a cor média do background
+    const bgColor = getAverageColor(background);
+    footerText.style.color = bgColor;
 }
+
+// Função para compartilhar a música atual
+function shareCurrentMusic() {
+    const shareTitle = title.textContent;
+    const shareArtist = artist.textContent;
+    const shareText = `Estou ouvindo: ${shareTitle} - ${shareArtist}`;
+    const shareUrl = window.location.href;
+
+    if (navigator.share) {
+        navigator.share({
+            title: 'Compartilhar Música',
+            text: shareText,
+            url: shareUrl,
+        })
+            .then(() => console.log('Música compartilhada com sucesso'))
+            .catch((error) => console.error('Erro ao compartilhar música:', error));
+    } else {
+        console.warn('API de compartilhamento não suportada pelo navegador.');
+    }
+}
+
+// Event listener para o botão de compartilhamento
+const shareButton = document.getElementById('share');
+shareButton.addEventListener('click', shareCurrentMusic);
+
+
 
 function changeMusic(direction) {
     musicIndex = (musicIndex + direction + songs.length) % songs.length;
@@ -148,6 +201,7 @@ function loadRandomMusic() {
     loadMusic(songs[randomIndex]); // Carregar a música aleatória
     playMusic();
 }
+
 function jumpToPreviousMusic() {
     changeMusic(-1);
 }
@@ -187,6 +241,7 @@ music.addEventListener('ended', () => {
         changeMusic(1); // Carregar a próxima música se a reprodução aleatória estiver desativada
     }
 });
+
 music.addEventListener('timeupdate', updateProgressBar);
 playerProgress.addEventListener('click', setProgressBar);
 searchInput.addEventListener('input', handleSearch);
@@ -203,6 +258,3 @@ function downloadCurrentMusic() {
 // Event listener para o botão de download
 const downloadButton = document.getElementById('download');
 downloadButton.addEventListener('click', downloadCurrentMusic);
-
-
-
