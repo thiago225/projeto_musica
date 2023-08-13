@@ -136,8 +136,8 @@ function shareCurrentMusic() {
 }
 
 // Event listener para o botão de compartilhamento
-const shareButton = document.getElementById('share');
-shareButton.addEventListener('click', shareCurrentMusic);
+shareBtn.addEventListener('click', shareCurrentMusic);
+
 
 
 
