@@ -39,6 +39,69 @@ function togglePlayOnSpace(event) {
 // Adicionar o event listener para o evento de teclado
 document.addEventListener('keydown', togglePlayOnSpace);
 
+// Ler os dados do arquivo JSON e carregar a primeira música
+fetch('./assets/musica.json')
+    .then(response => response.json())
+    .then(data => {
+        songs = data; // Atribuir os dados do arquivo JSON ao array songs
+        const randomIndex = getRandomIndex(songs.length); // Gerar um índice aleatório
+        loadMusic(songs[randomIndex]); // Carregar a música aleatória
+    })
+    .catch(error => {
+        console.error('Erro ao ler o arquivo JSON:', error);
+        console.log("Erro ao ler o arquivo JSON");
+    });
+
+let musicIndex = 0;
+let isPlaying = false;
+let isRandom = false;
+
+function togglePlay() {
+    if (isPlaying) {
+        pauseMusic();
+    } else {
+        playMusic();
+    }
+}
+
+function playMusic() {
+    isPlaying = true;
+    // Alterar o ícone do botão de reprodução
+    playBtn.classList.replace('fa-play', 'fa-pause');
+    // Definir título de foco do botão
+    playBtn.setAttribute('title', 'Pause');
+    music.play();
+}
+
+function pauseMusic() {
+    isPlaying = false;
+    // Ícone do botão Alterar pausa
+    playBtn.classList.replace('fa-pause', 'fa-play');
+    // Definir título de foco do botão Play
+    playBtn.setAttribute('title', 'Play');
+    music.pause();
+}
+
+// Carregar a imagem de fundo e, em seguida, carregar a primeira música
+const bgImage = new Image();
+bgImage.src = './musica/img/';
+bgImage.onload = () => {
+    background.src = bgImage.src;
+
+    // Ler os dados do arquivo JSON e carregar a primeira música
+    fetch('./assets/musica.json')
+        .then(response => response.json())
+        .then(data => {
+            songs = data; // Atribuir os dados do arquivo JSON ao array songs
+            const randomIndex = getRandomIndex(songs.length); // Gerar um índice aleatório
+            loadMusic(songs[randomIndex]); // Carregar a música aleatória
+        })
+        .catch(error => {
+            console.error('Erro ao ler o arquivo JSON:', error);
+            console.log("Erro ao ler o arquivo JSON");
+        });
+};
+
 // Função para carregar uma música e atualizar a cor do footer
 function loadMusic(song) {
     music.src = song.path;
@@ -76,40 +139,12 @@ function shareCurrentMusic() {
     }
 }
 
+
 // Event listener para o botão de compartilhamento
 shareBtn.addEventListener('click', shareCurrentMusic);
 
-// Função para pausar a música
-function pauseMusic() {
-    isPlaying = false;
-    // Alterar ícone do botão para pausa
-    playBtn.classList.replace('fa-pause', 'fa-play');
-    // Definir título do botão para Play
-    playBtn.setAttribute('title', 'Play');
-    music.pause();
-}
 
-// Função para tocar a música
-function playMusic() {
-    isPlaying = true;
-    // Alterar ícone do botão para reprodução
-    playBtn.classList.replace('fa-play', 'fa-pause');
-    // Definir título do botão para Pause
-    playBtn.setAttribute('title', 'Pause');
-    music.play();
-}
 
-let musicIndex = 0;
-let isPlaying = false;
-let isRandom = false;
-
-function togglePlay() {
-    if (isPlaying) {
-        pauseMusic();
-    } else {
-        playMusic();
-    }
-}
 
 function changeMusic(direction) {
     musicIndex = (musicIndex + direction + songs.length) % songs.length;
@@ -133,24 +168,29 @@ function setProgressBar(e) {
     music.currentTime = (clickX / width) * music.duration;
 }
 
+// Função para buscar as músicas
 function handleSearch() {
     const searchTerm = searchInput.value.toLowerCase();
 
+    // Encontrar as músicas correspondentes ao termo de busca
     const foundSongs = songs.filter(song =>
         song.displayName.toLowerCase().includes(searchTerm) ||
         song.artist.toLowerCase().includes(searchTerm)
     );
 
     if (foundSongs.length > 0) {
+        // Carregar a primeira música encontrada
         loadMusic(foundSongs[0]);
     } else {
+        // Exibir uma mensagem de erro ou fazer algo quando nenhuma música for encontrada
         console.log('Nenhuma música encontrada');
         alert('Nenhuma música encontrada!');
     }
 }
 
+// Função para ativar ou desativar a reprodução de música aleatória
 function toggleRandom() {
-    isRandom = !isRandom;
+    isRandom = !isRandom; // Inverte o valor de isRandom
     const randomToggleBtn = document.getElementById('random-toggle');
 
     if (isRandom) {
@@ -160,9 +200,10 @@ function toggleRandom() {
     }
 }
 
+// Função para carregar uma música aleatória
 function loadRandomMusic() {
-    const randomIndex = getRandomIndex(songs.length);
-    loadMusic(songs[randomIndex]);
+    const randomIndex = getRandomIndex(songs.length); // Gerar um índice aleatório
+    loadMusic(songs[randomIndex]); // Carregar a música aleatória
     playMusic();
 }
 
@@ -175,13 +216,14 @@ function jumpToNextMusic() {
 }
 
 function jumpForward() {
-    music.currentTime += 5;
+    music.currentTime += 5; // Avançar 5 segundos
 }
 
 function jumpBackward() {
-    music.currentTime -= 5;
+    music.currentTime -= 5; // Retroceder 5 segundos
 }
 
+// Event listener para as teclas de seta para cima e para baixo
 document.addEventListener('keydown', event => {
     if (event.code === 'ArrowUp') {
         jumpToPreviousMusic();
@@ -199,9 +241,9 @@ prevBtn.addEventListener('click', () => changeMusic(-1));
 nextBtn.addEventListener('click', () => changeMusic(1));
 music.addEventListener('ended', () => {
     if (isRandom) {
-        loadRandomMusic();
+        loadRandomMusic(); // Carregar uma música aleatória se a reprodução aleatória estiver ativada
     } else {
-        changeMusic(1);
+        changeMusic(1); // Carregar a próxima música se a reprodução aleatória estiver desativada
     }
 });
 
@@ -210,13 +252,14 @@ playerProgress.addEventListener('click', setProgressBar);
 searchInput.addEventListener('input', handleSearch);
 document.getElementById('random-toggle').addEventListener('click', toggleRandom);
 
+// Função para iniciar o download da música atual
 function downloadCurrentMusic() {
     const downloadLink = document.createElement('a');
-    downloadLink.download = title.textContent;
+    downloadLink.download = title.textContent; // Utiliza o título da música atual
     downloadLink.click();
     downloadLink.href = music.src;
 }
 
+// Event listener para o botão de download
 const downloadButton = document.getElementById('download');
 downloadButton.addEventListener('click', downloadCurrentMusic);
-
