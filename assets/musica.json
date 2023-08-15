@@ -964,5 +964,113 @@
     "displayName": "All for Us",
     "cover": "musica/img/165.jpg",
     "artist": "Labrinth/Zendaya"
+  },
+  {
+    "path": "musica/mp3/166.mp3",
+    "displayName": "All for Us",
+    "cover": "musica/img/165.jpg",
+    "artist": "Labrinth/Zendaya"
+  },
+  {
+    "path": "musica/mp3/165.mp3",
+    "displayName": "Gostava tanto de você",
+    "cover": "musica/img/166.jpg",
+    "artist": "Tim Maia"
+  },
+  {
+    "path": "musica/mp3/167.mp3",
+    "displayName": "Do Leme ao pontal",
+    "cover": "musica/img/167.jpg",
+    "artist": "Tim Maia"
+  },
+  {
+    "path": "musica/mp3/168.mp3",
+    "displayName": "Azul da cor do mar",
+    "cover": "musica/img/168.jpg",
+    "artist": "Tim Maia"
+  },
+  {
+    "path": "musica/mp3/169.mp3",
+    "displayName": "Não quero dinheiro, Só quero amar",
+    "cover": "musica/img/169.jpg",
+    "artist": "Tim Maia"
+  },
+  {
+    "path": "musica/mp3/170.mp3",
+    "displayName": "Me dê motivo",
+    "cover": "musica/img/170.jpg",
+    "artist": "Tim Maia"
+  },
+  {
+    "path": "musica/mp3/171.mp3",
+    "displayName": "Vale Tudo",
+    "cover": "musica/img/171.jpg",
+    "artist": "Tim Maia"
+  },
+  {
+    "path": "musica/mp3/172.mp3",
+    "displayName": "Primavera",
+    "cover": "musica/img/172.jpg",
+    "artist": "Tim Maia"
+  },
+  {
+    "path": "musica/mp3/173.mp3",
+    "displayName": "Acenda o Farol",
+    "cover": "musica/img/173.jpg",
+    "artist": "Tim Maia"
+  },
+  {
+    "path": "musica/mp3/174.mp3",
+    "displayName": "Telefone",
+    "cover": "musica/img/174.jpg",
+    "artist": "Tim Maia"
+  },
+  {
+    "path": "musica/mp3/175.mp3",
+    "displayName": "Se eu lembro faz doer",
+    "cover": "musica/img/175.jpg",
+    "artist": "Tim Maia"
+  },
+  {
+    "path": "musica/mp3/176.mp3",
+    "displayName": "Que beleza",
+    "cover": "musica/img/176.jpg",
+    "artist": "Tim Maia"
+  },
+  {
+    "path": "musica/mp3/177.mp3",
+    "displayName": "Réu Confesso",
+    "cover": "musica/img/177.jpg",
+    "artist": "Tim Maia"
+  },
+  {
+    "path": "musica/mp3/178.mp3",
+    "displayName": "O Descobridor Dos sete mares",
+    "cover": "musica/img/178.jpg",
+    "artist": "Tim Maia"
+  },
+  {
+    "path": "musica/mp3/179.mp3",
+    "displayName": "Shameless",
+    "cover": "musica/img/179.jpg",
+    "artist": "Camila cabello"
+  },
+  {
+    "path": "musica/mp3/180.mp3",
+    "displayName": "I Found",
+    "cover": "musica/img/180.jpg",
+    "artist": "Amber Run"
+  },
+  {
+    "path": "musica/mp3/181.mp3",
+    "displayName": "Die for you",
+    "cover": "musica/img/181.jpg",
+    "artist": "The weeknd/Ariana Grande"
+  },
+  {
+    "path": "musica/mp3/182.mp3",
+    "displayName": "Quem é o louco entre nós",
+    "cover": "musica/img/182.jpg",
+    "artist": "Raphaela Santos"
   }
 ]
