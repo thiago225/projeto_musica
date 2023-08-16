@@ -12,6 +12,7 @@ const background = document.getElementById('bg-img');
 const searchInput = document.getElementById('search-input');
 const footerText = document.getElementById('footer-text');
 const shareBtn = document.getElementById('share');
+const downloadButton = document.getElementById('download');
 
 const music = new Audio();
 let songs = [];
@@ -255,11 +256,13 @@ document.getElementById('random-toggle').addEventListener('click', toggleRandom)
 // Função para iniciar o download da música atual
 function downloadCurrentMusic() {
     const downloadLink = document.createElement('a');
-    downloadLink.download = title.textContent; // Utiliza o título da música atual
-    downloadLink.click();
     downloadLink.href = music.src;
+    downloadLink.download = `${title.textContent}.mp3`; // Nome do arquivo de download
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
 }
 
+
 // Event listener para o botão de download
-const downloadButton = document.getElementById('download');
 downloadButton.addEventListener('click', downloadCurrentMusic);
