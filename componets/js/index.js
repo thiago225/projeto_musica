@@ -111,9 +111,7 @@ function loadMusic(song) {
     image.src = song.cover;
     background.src = song.cover;
 
-    // Atualizar a cor do footer com a cor média do background
-    const bgColor = getAverageColor(background);
-    footerText.style.color = bgColor;
+    footerText.style.color = 'white'; // Ou qualquer cor padrão desejada
 }
 
 // Função para compartilhar a música atual
@@ -182,6 +180,7 @@ function handleSearch() {
     if (foundSongs.length > 0) {
         // Carregar a primeira música encontrada
         loadMusic(foundSongs[0]);
+        playMusic();
     } else {
         // Exibir uma mensagem de erro ou fazer algo quando nenhuma música for encontrada
         console.log('Nenhuma música encontrada');
@@ -203,10 +202,15 @@ function toggleRandom() {
 
 // Função para carregar uma música aleatória
 function loadRandomMusic() {
-    const randomIndex = getRandomIndex(songs.length); // Gerar um índice aleatório
-    loadMusic(songs[randomIndex]); // Carregar a música aleatória
+    let randomIndex = musicIndex;
+    while (randomIndex === musicIndex) {
+        randomIndex = getRandomIndex(songs.length);
+    }
+    musicIndex = randomIndex;
+    loadMusic(songs[musicIndex]);
     playMusic();
 }
+
 
 function jumpToPreviousMusic() {
     changeMusic(-1);
