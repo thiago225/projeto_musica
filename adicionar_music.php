@@ -1,61 +1,46 @@
-<?php
-include_once "conect/funcoes.php";
-include_once "conect/util.php";
-
-$db = getMainDB();
-$path = tratamento($db, $_POST['path']);
-$displayName = tratamento($db, $_POST['displayName']);
-$cover = tratamento($db, $_POST['cover']);
-$artist = tratamento($db, $_POST['artist']);
-
-$select = "select path from musica_path where path = '$path'";
-$qs = $db->query($select);
-
-if($qs->num_rows == 0){
-    $insert = "insert into musica_path (path,displayNamen,cover,artist) values ('$path', '$displayName','$cover','$artist')";
-    $qi = $db->query($insert);
-    if($qi){
-        logMsg("Inserindo música: $displayName");
-    }else{
-        logMsg("Error: $db->error");
-    }
-
-}else{
-    logMsg("Música já inserinda!! -> $path");
-}
-
-?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>adicionar musica</title>
+    <title>Adicionar Música</title>
+    <!-- Link para o CSS do Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
-    <form action="" method="post">
-        <div>
-            <label>Path:</label>
-            <input type="text" class="Path" name="Path" placeholder="ex: musica/mp3/1.mp3" >
-        </div>
-        <br>
-        <div>
-            <label>displayName:</label>
-            <input type="text" class="displayName" name="displayName" placeholder="ex: The Charmer's Call">
-        </div>
-        <br>
-        <div>
-            <label>cover:</label>
-            <input type="text" class="cover" name="cover" placeholder="ex: musica/img/1.jpg">
-        </div>
-        <br>
-        <div>
-            <label>artist:</label>
-            <input type="text" class="artist" name="artist" placeholder="ex: Hanu Dixit">
-        </div>
-        <br>
-        <input type="submit" class="enviar" name="botao" value="em caminhar" >
 
-    </form>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Adicionar Música</h2>
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="arquivoMusica">Escolha a música:</label>
+                <input type="file" class="form-control-file" name="arquivoMusica" id="arquivoMusica" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="displayName">Nome da Música:</label>
+                <input type="text" class="form-control" name="displayName" id="displayName" placeholder="ex: The Charmer's Call">
+            </div>
+            
+            <div class="form-group">
+                <label for="arquivoImagem">Escolha a imagem da música:</label>
+                <input type="file" class="form-control-file" name="arquivoImagem" id="arquivoImagem" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="artist">Artista:</label>
+                <input type="text" class="form-control" name="artist" id="artist" placeholder="ex: Hanu Dixit">
+            </div>
+            
+            <button type="submit" class="btn btn-primary" name="botao">Enviar</button>
+        </form>
+    </div>
+
+    <!-- Script JavaScript do Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+
 </html>
